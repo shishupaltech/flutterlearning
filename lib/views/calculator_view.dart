@@ -5,19 +5,36 @@ class CalculatorVIEW extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        // calculator display
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: "0",
-            hintText: "Enter a number",
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Column(
+        children: [
+          // calculator display
+          TextField(
+            keyboardType: TextInputType.number,
+            autofocus: true,
+            decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.circular(30)),
+                labelText: "0",
+                hintText: "Enter a number",
+                hintStyle: const TextStyle(
+                  color: Colors.white,
+                )),
           ),
-        ),
-        // expand
-        // button
-      ],
+          // expand
+          // button
+        ],
+      ),
     );
   }
 }
